@@ -29,7 +29,7 @@ class OcrEngine:
     def recognize(self, image_bytes: bytes) -> str:
         image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
         img_array = np.array(image)
-        result = self.ocr.ocr(img_array, cls=True)
+        result = self.ocr.ocr(img_array)
         if not result:
             return ""
         lines = []
