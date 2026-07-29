@@ -23,7 +23,6 @@ class OcrEngine:
         self.ocr = PaddleOCR(
             use_angle_cls=True,
             lang="ch",
-            use_gpu=False,
         )
         print("[OCR] PaddleOCR ready")
 
