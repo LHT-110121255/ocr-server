@@ -1,7 +1,12 @@
 import io
+import logging
 import numpy as np
 from PIL import Image
 from paddleocr import PaddleOCR
+
+logging.getLogger("ppocr").setLevel(logging.ERROR)
+logging.getLogger("paddleocr").setLevel(logging.ERROR)
+logging.getLogger("paddle").setLevel(logging.ERROR)
 
 
 class OcrEngine:
@@ -18,7 +23,6 @@ class OcrEngine:
         self.ocr = PaddleOCR(
             use_angle_cls=True,
             lang="ch",
-            show_log=False,
             use_gpu=False,
         )
         print("[OCR] PaddleOCR ready")
